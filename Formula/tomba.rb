@@ -5,24 +5,24 @@
 class Tomba < Formula
   desc "CLI utility to search or verify lists of email addresses in minutes."
   homepage "https://tomba.io"
-  version "v1.0.3-next"
+  version "v1.0.4-next"
   license "Apache-2.0"
 
   depends_on "git"
   depends_on "go" => :optional
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/tomba-io/tomba/releases/download/v1.0.3/tomba_darwin_amd64.tar.gz"
-      sha256 "445dac0a1617ecb33cb3ba6aedb47302ce93e514e2b20a0ebfa098cd566d41a4"
+    if Hardware::CPU.arm?
+      url "https://github.com/tomba-io/tomba/releases/download/v1.0.4/tomba_darwin_arm64.tar.gz"
+      sha256 "0632e5b0a91caa2611ae9573783fb54a4a48730bb3ad89b697c3ab2b5639081c"
 
       def install
         bin.install "tomba"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/tomba-io/tomba/releases/download/v1.0.3/tomba_darwin_arm64.tar.gz"
-      sha256 "413f8d3c96dd64015e0bf4bd16ab989551e2c1d868de6510f8e35e86db7c1f56"
+    if Hardware::CPU.intel?
+      url "https://github.com/tomba-io/tomba/releases/download/v1.0.4/tomba_darwin_amd64.tar.gz"
+      sha256 "d929bc9283bd4bb4fd81e4e73c555c72cd81c181c0990a3868e1a6e83b60eb90"
 
       def install
         bin.install "tomba"
@@ -32,16 +32,16 @@ class Tomba < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tomba-io/tomba/releases/download/v1.0.3/tomba_linux_arm64.tar.gz"
-      sha256 "fe45b3933610043afad4d609e7bce064aa396353cbdd40a7037a0fcdf404192f"
+      url "https://github.com/tomba-io/tomba/releases/download/v1.0.4/tomba_linux_arm64.tar.gz"
+      sha256 "9911ce119a69d4889f3e68965a382dc6e5a08520ac439624c46904f22e79f369"
 
       def install
         bin.install "tomba"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/tomba-io/tomba/releases/download/v1.0.3/tomba_linux_amd64.tar.gz"
-      sha256 "15b3b31340a796126e80edcf3b8e2944c9d81af881859121f1026ec69b3ece28"
+      url "https://github.com/tomba-io/tomba/releases/download/v1.0.4/tomba_linux_amd64.tar.gz"
+      sha256 "8a0a6e48f13c7946ff36b7a81f9bfc135c346fe61a71487efdfedd476e3b6f45"
 
       def install
         bin.install "tomba"
