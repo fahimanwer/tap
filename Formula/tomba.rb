@@ -5,7 +5,7 @@
 class Tomba < Formula
   desc "CLI utility to search or verify lists of email addresses in minutes."
   homepage "https://tomba.io"
-  version "v1.0.4-next"
+  version "v1.0.5"
   license "Apache-2.0"
 
   depends_on "git"
@@ -13,7 +13,7 @@ class Tomba < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/tomba-io/tomba/releases/download/v1.0.4/tomba_darwin_arm64.tar.gz"
+      url "https://github.com/tomba-io/tomba/releases/download/v1.0.5/tomba_darwin_arm64.tar.gz"
       sha256 "0632e5b0a91caa2611ae9573783fb54a4a48730bb3ad89b697c3ab2b5639081c"
 
       def install
